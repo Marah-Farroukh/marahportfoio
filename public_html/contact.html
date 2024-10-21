@@ -83,25 +83,29 @@
             <form id="contact-form" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>                 
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" id="email" class="form-control" placeholder="Enter Email" required>                 
+                        <input type="email" id="email" class="form-control" placeholder="Enter Email" required>
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea id="message" rows="6" class="form-control" placeholder="Write Something" required></textarea>
+                        <textarea id="message" rows="6" class="form-control" placeholder="Write Something"
+                            required></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
+                        <button type="submit" class="btn btn-outline-primary rounded" onclick="sendMail()"> Sent
+                        </button>
                     </div>
-                </div>  
+                </div>
             </form>
         </div>
     </section>
 
     <div class="container">
-        <footer class="footer">       
-            <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">MARAH</a></p>
+        <footer class="footer">
+            <p class="mb-0">Copyright
+                <script>document.write(new Date().getFullYear())</script> &copy; <a href="#">MARAH</a>
+            </p>
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
                 <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
@@ -114,42 +118,20 @@
     </div>
 
     <!-- Include the EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init({
-                publicKey: "3DCIKHn5Hrb8VbVKf",
-            });
-        })();
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
-
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Collect form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Send email using EmailJS
-            emailjs.send("service_g3o1xq1", "template_68ofhqy", {
-                from_name: name,
-                from_email: email,
-                message: message
-            })
-            .then(function(response) {
-                alert('Message sent successfully!');
-            }, function(error) {
-                alert('Message sent successfully!');
-            });
-        });
+    <script type="text/javascript">
+            (function () {
+                emailjs.init({
+                    publicKey: "3DCIKHn5Hrb8VbVKf",
+                });
+            })();
     </script>
 
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <script src="assets/js/meyawo.js"></script>
+    <script src="assets/js/scripts.js"></script>
 
 </body>
 

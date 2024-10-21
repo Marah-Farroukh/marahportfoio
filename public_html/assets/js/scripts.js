@@ -20,3 +20,14 @@ $('#nav-toggle').click(function(){
     $(this).toggleClass('is-active')
     $('ul.nav').toggleClass('show');
 });
+
+function sendMail(){
+    let params = {
+        // Collect form data
+        from_name : document.getElementById('name').value,
+        from_email : document.getElementById('email').value,
+        message : document.getElementById('message').value,
+    }
+
+    emailjs.send("service_q6uxqva", "template_68ofhqy", params).then(alert("Email Sent"))
+}
